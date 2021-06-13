@@ -1,6 +1,6 @@
 server.port: 8095
-logging.level.root: DEBUG
+logging.level.root: INFO
 
 service.url:
-  tools: http://localhost:8082
-  orders: http://localhost:8083
+  tools: http://tools-app:8082
+  orders: http://orders-app:8083
