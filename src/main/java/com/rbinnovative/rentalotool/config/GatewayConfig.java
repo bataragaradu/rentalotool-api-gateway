@@ -9,8 +9,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GatewayConfig {
 
-    @Value("${service.tools.url}")
+    @Value("${service.url.tools}")
     private String toolsUrl;
+    @Value("${service.url.orders}")
+    private String orders;
 
     @Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder) {
@@ -18,6 +20,21 @@ public class GatewayConfig {
                 .route(p -> p
                         .path("/tools")
                         .uri(toolsUrl))
+                .route(p -> p
+                        .path("/tools/*")
+                        .uri(toolsUrl))
+                .route(p -> p
+                        .path("/orders")
+                        .uri(orders))
+                .route(p -> p
+                        .path("/orders/*")
+                        .uri(orders))
+                .route(p -> p
+                        .path("/category/*")
+                        .uri(orders))
+                .route(p -> p
+                        .path("/category")
+                        .uri(orders))
                 .build();
     }
 }
