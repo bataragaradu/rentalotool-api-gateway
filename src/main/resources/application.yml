@@ -3,4 +3,4 @@ logging.level.root: DEBUG
 
 service.url:
   tools: http://localhost:8082
-  orders: http://localhost:8093
+  orders: http://localhost:8083

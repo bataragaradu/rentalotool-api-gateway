@@ -21,19 +21,19 @@ public class GatewayConfig {
                         .path("/tools")
                         .uri(toolsUrl))
                 .route(p -> p
-                        .path("/tools/*")
+                        .path("/tools/**")
+                        .uri(toolsUrl))
+                .route(p -> p
+                        .path("/category/*")
+                        .uri(toolsUrl))
+                .route(p -> p
+                        .path("/category")
                         .uri(toolsUrl))
                 .route(p -> p
                         .path("/orders")
                         .uri(orders))
                 .route(p -> p
                         .path("/orders/*")
-                        .uri(orders))
-                .route(p -> p
-                        .path("/category/*")
-                        .uri(orders))
-                .route(p -> p
-                        .path("/category")
                         .uri(orders))
                 .build();
     }
